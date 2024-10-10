@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqj13ywtx8526"]
+[gd_scene load_steps=3 format=3 uid="uid://cqj13ywtx8526"]
+
+[ext_resource type="Script" path="res://scripts/Preview.cs" id="1_ucl6h"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_bkqme"]
 file = "Vagabond.ogv"
@@ -10,14 +12,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+script = ExtResource("1_ucl6h")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.205729
-anchor_top = 0.155864
+anchor_top = 0.117284
 anchor_right = 0.765625
-anchor_bottom = 0.805556
+anchor_bottom = 0.844136
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -27,3 +30,8 @@ layout_mode = 2
 stream = SubResource("VideoStreamTheora_bkqme")
 autoplay = true
 expand = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
