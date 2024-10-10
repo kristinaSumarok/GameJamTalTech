@@ -28,7 +28,7 @@ use_top_left = true
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Start" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = SubResource("Theme_idcc2")
@@ -37,9 +37,11 @@ theme_override_font_sizes/font_size = 40
 text = "Start"
 icon_alignment = 1
 
-[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_idcc2")
 theme_override_fonts/font = SubResource("FontVariation_5fue7")
 theme_override_font_sizes/font_size = 40
 text = "Back"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="ExitGame"]

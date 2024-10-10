@@ -2,5 +2,11 @@
 
 [ext_resource type="Script" path="res://scripts/SceneLoader.cs" id="1_vc6r2"]
 
-[node name="First" type="Node"]
+[node name="First" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.749864, 0.778081, 0.528242, 1)
 script = ExtResource("1_vc6r2")
