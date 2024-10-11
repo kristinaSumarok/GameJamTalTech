@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/Preview.cs" id="1_ucl6h"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_bkqme"]
-file = "Vagabond.ogv"
+file = "video/Vagabond.ogv"
 
 [node name="Node2D" type="ColorRect"]
 anchors_preset = 15
