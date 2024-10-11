@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw5jip5xaliaf"
-path="res://.godot/imported/photo_2024-10-11_20-58-33.jpg-e845daa1da97db62e694ab24bc9d8080.ctex"
+uid="uid://drlukegrof2ap"
+path="res://.godot/imported/Sewage sprite dorozhka.png-36479aae73618c39e3c0a61a7cd51e2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/photo_2024-10-11_20-58-33.jpg"
-dest_files=["res://.godot/imported/photo_2024-10-11_20-58-33.jpg-e845daa1da97db62e694ab24bc9d8080.ctex"]
+source_file="res://sprites/Sewage sprite dorozhka.png"
+dest_files=["res://.godot/imported/Sewage sprite dorozhka.png-36479aae73618c39e3c0a61a7cd51e2e.ctex"]
 
 [params]
 

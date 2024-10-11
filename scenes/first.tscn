@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://hjbhbk2a288b"]
+[gd_scene load_steps=7 format=4 uid="uid://hjbhbk2a288b"]
 
 [ext_resource type="Script" path="res://scripts/SceneLoader.cs" id="1_vc6r2"]
+[ext_resource type="Script" path="res://scripts/doll.cs" id="2_id23e"]
 [ext_resource type="Texture2D" uid="uid://c0nkc62odn05e" path="res://icon.svg" id="2_xugs5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1ga2"]
@@ -10,7 +11,7 @@ size = Vector2(153, 148)
 texture = ExtResource("2_xugs5")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64.75, 64, -62.25, 63)
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -76,6 +77,7 @@ texture_region_size = Vector2i(128, 128)
 7:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_uenyp"]
+tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ayemx")
 
@@ -83,12 +85,17 @@ sources/0 = SubResource("TileSetAtlasSource_ayemx")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = 14.0
+offset_right = 1097.0
+offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.749864, 0.778081, 0.528242, 1)
 script = ExtResource("1_vc6r2")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_id23e")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(481, 270)
@@ -96,14 +103,19 @@ scale = Vector2(1.19531, 1.16406)
 texture = ExtResource("2_xugs5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(259, 95)
+position = Vector2(489, 269)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(480.5, 270)
 shape = SubResource("RectangleShape2D_p1ga2")
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(481, 281)
+zoom = Vector2(2, 2)
+
 [node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 1)
 
 [node name="second" type="TileMapLayer" parent="Node2D"]
-tile_map_data = PackedByteArray(0, 0, 4, 0, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 31, 0, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 0, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 39, 0, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAEACQAAAAAAAAAAAAMACQAAAAAAAAAAAAfACQAAAAAAAAAAAAXACQAAAAAAAAAAAAnACQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAACAAQAAAAAAAAAAAABAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_uenyp")
