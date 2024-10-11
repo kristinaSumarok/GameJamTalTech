@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bsbxuovxi0lf"
+path="res://.godot/imported/Attached a body part.mp3-37b2d80b30b352a1f9cc8f6c224b5b57.mp3str"
+
+[deps]
+
+source_file="res://audio/Attached a body part.mp3"
+dest_files=["res://.godot/imported/Attached a body part.mp3-37b2d80b30b352a1f9cc8f6c224b5b57.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
