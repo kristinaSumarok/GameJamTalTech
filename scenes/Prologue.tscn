@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg24cpfrn7kul"]
+
+[ext_resource type="Script" path="res://scripts/Prologue.cs" id="1_kfu3k"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_m3qyp"]
+file = "res://video/FirstCutscene-with-music.ogv"
+
+[node name="Prologue" type="Node2D"]
+script = ExtResource("1_kfu3k")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+anchors_preset = -1
+anchor_right = 1.003
+anchor_bottom = 1.007
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1921.0
+offset_bottom = 1089.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+size_flags_horizontal = 4
+stream = SubResource("VideoStreamTheora_m3qyp")
+autoplay = true
+
+[node name="Timer1" type="Timer" parent="."]
+wait_time = 6.2
+one_shot = true
+autostart = true

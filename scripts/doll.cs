@@ -6,7 +6,7 @@ using helpers;
 
 public partial class doll : CharacterBody2D
 {
-	public const float Speed = 300.0f;
+	public const float Speed = 500.0f;
 	public const float JumpVelocity = -400.0f;
 	public int collectedLimbs = 0;
 
@@ -31,9 +31,10 @@ public partial class doll : CharacterBody2D
 	//collision mask
 	private CollisionShape2D _collisionMask;
 
-	//dialogur manager
+	//dialogue manager
 	Area2D actionableFinder;
-	Godot.Vector2 inputvector = Godot.Vector2.Zero;
+	bool dialogueOn = false;
+
 
 
 	public override void _Ready(){
@@ -54,14 +55,14 @@ public partial class doll : CharacterBody2D
 	}
 
 	public override void _UnhandledInput(InputEvent @event){
-		if (Input.IsActionJustPressed("ui_cancel")){
+
+		if (Input.IsActionJustPressed("ui_action")){
 			
 			Array<Area2D> actionables = actionableFinder.GetOverlappingAreas();
 			if(actionables.Count > 0){
 				(actionables[0] as helpers.Actionable).Action();
-				inputvector = Godot.Vector2.Zero;
+	
 			}
-		inputvector = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		}
 	}
 

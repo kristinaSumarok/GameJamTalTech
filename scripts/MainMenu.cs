@@ -7,7 +7,7 @@ public partial class MainMenu : ColorRect
 	public override void _Ready()
 	{
 		GetNode<Button>("CenterContainer/VBoxContainer/Start").Pressed += () => {
-			GetNode<SceneLoader>("/root/SceneLoader").changeToScene("first.tscn");
+			GetNode<SceneLoader>("/root/SceneLoader").changeToScene("Prologue.tscn");
 		};
 	}
 

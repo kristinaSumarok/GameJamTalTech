@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ugih84i5xrqe"
+path="res://.godot/imported/undertale_033. Quiet Water.mp3-89e3671cf474012f2af7c1c0fa316ab7.mp3str"
+
+[deps]
+
+source_file="res://audio/undertale_033. Quiet Water.mp3"
+dest_files=["res://.godot/imported/undertale_033. Quiet Water.mp3-89e3671cf474012f2af7c1c0fa316ab7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
