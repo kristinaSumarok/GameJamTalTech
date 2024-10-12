@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6xq060dn6w2"
+path="res://.godot/imported/The lock is open.mp3-6df00d7c0641ea9ce5c6a8201d8642fa.mp3str"
+
+[deps]
+
+source_file="res://audio/The lock is open.mp3"
+dest_files=["res://.godot/imported/The lock is open.mp3-6df00d7c0641ea9ce5c6a8201d8642fa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

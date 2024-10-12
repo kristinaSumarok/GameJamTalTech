@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dkob2ej1hbtco"
+path="res://.godot/imported/dramatic music.mp3-a374b03723eff96f4e24bb07333fdb01.mp3str"
+
+[deps]
+
+source_file="res://audio/dramatic music.mp3"
+dest_files=["res://.godot/imported/dramatic music.mp3-a374b03723eff96f4e24bb07333fdb01.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

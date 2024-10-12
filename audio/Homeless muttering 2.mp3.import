@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bko62a1bvqbqt"
+path="res://.godot/imported/Homeless muttering 2.mp3-21b5d9f58f038e9d93a54e1d9f95d03a.mp3str"
+
+[deps]
+
+source_file="res://audio/Homeless muttering 2.mp3"
+dest_files=["res://.godot/imported/Homeless muttering 2.mp3-21b5d9f58f038e9d93a54e1d9f95d03a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

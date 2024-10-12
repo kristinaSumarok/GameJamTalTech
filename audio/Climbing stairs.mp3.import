@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blr7y8jxcfxer"
+path="res://.godot/imported/Climbing stairs.mp3-e1becab66a8da15cae9e2d7d1f5c9495.mp3str"
+
+[deps]
+
+source_file="res://audio/Climbing stairs.mp3"
+dest_files=["res://.godot/imported/Climbing stairs.mp3-e1becab66a8da15cae9e2d7d1f5c9495.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

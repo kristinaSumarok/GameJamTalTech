@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://chj5hp3uta7vl"]
+
+[ext_resource type="Script" path="res://scripts/Trigger.cs" id="1_5oo3t"]
+
+[node name="Sliders" type="Node2D"]
+script = ExtResource("1_5oo3t")
+
+[node name="FeedBackLabel" type="Label" parent="."]
+modulate = Color(0.0475577, 0.0475576, 0.0475576, 1)
+offset_left = 519.0
+offset_top = 548.0
+offset_right = 712.0
+offset_bottom = 571.0
+text = "
+"
+
+[node name="HSliderRiddle1" type="HSlider" parent="."]
+offset_left = 14.0
+offset_top = 579.0
+offset_right = 1146.0
+offset_bottom = 595.0
+
+[node name="riddleLabel" type="Label" parent="."]
+offset_left = 479.0
+offset_top = 383.0
+offset_right = 519.0
+offset_bottom = 406.0
+text = "I’m the tool for dad’s long milk-fetching quest, 
+A step-by-step process, take a year's rest, 
+Without me, you’re stuck, you can’t make a run, 
+And without me, the journey might never be done."
+
+[node name="AnswerContainer" type="HBoxContainer" parent="."]
+offset_left = 17.0
+offset_top = 529.0
+offset_right = 1138.0
+offset_bottom = 569.0
