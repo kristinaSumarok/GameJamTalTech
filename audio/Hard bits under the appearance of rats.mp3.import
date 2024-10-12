@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bncvs2a7jme47"
+path="res://.godot/imported/Hard bits under the appearance of rats.mp3-2965c88af088ba5cfd38634dace23d70.mp3str"
+
+[deps]
+
+source_file="res://audio/Hard bits under the appearance of rats.mp3"
+dest_files=["res://.godot/imported/Hard bits under the appearance of rats.mp3-2965c88af088ba5cfd38634dace23d70.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

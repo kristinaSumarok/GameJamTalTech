@@ -9,7 +9,7 @@ public partial class doll : CharacterBody2D
 
 	public int collectedLimbs = 0;
 
-    //Nodes
+	//Nodes
 	///TODO: replace with array of sprite animations if possible
 	//static animations
 	private AnimatedSprite2D _standsprite;
@@ -79,8 +79,8 @@ public partial class doll : CharacterBody2D
 	}
 
 	private void _UpdateSpriteRenderer(float velX)
-    {
-        bool walking = velX != 0;
+	{
+		bool walking = velX != 0;
 
 		//TODO: replace with switch / case statement
 		if (collectedLimbs == 0){
@@ -111,7 +111,7 @@ public partial class doll : CharacterBody2D
 
 			_changeAnimationState(walking, _withLegsArmsSprite, _walksWithHandsAnimation, velX);
 		}
-    }
+	}
 
 	private void _UpdateColisionMask(float x, float y){
 		_collisionMask.Position = new Vector2(x,y);

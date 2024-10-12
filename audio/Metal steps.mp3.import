@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4k8ef2fcm84r"
+path="res://.godot/imported/Metal steps.mp3-8cfa3971b5057a73c5084c73a3cc5ad0.mp3str"
+
+[deps]
+
+source_file="res://audio/Metal steps.mp3"
+dest_files=["res://.godot/imported/Metal steps.mp3-8cfa3971b5057a73c5084c73a3cc5ad0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

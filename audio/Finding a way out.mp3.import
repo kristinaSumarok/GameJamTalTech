@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pmj0intbfxtv"
+path="res://.godot/imported/Finding a way out.mp3-09b0f0f227e0932fca16552095bae3cc.mp3str"
+
+[deps]
+
+source_file="res://audio/Finding a way out.mp3"
+dest_files=["res://.godot/imported/Finding a way out.mp3-09b0f0f227e0932fca16552095bae3cc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

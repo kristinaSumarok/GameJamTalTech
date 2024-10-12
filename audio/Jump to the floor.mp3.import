@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://duvr8uo4skuk6"
+path="res://.godot/imported/Jump to the floor.mp3-8e1011fc2e05c3d20265d6099fefa12e.mp3str"
+
+[deps]
+
+source_file="res://audio/Jump to the floor.mp3"
+dest_files=["res://.godot/imported/Jump to the floor.mp3-8e1011fc2e05c3d20265d6099fefa12e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
