@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://hjbhbk2a288b"]
+[gd_scene load_steps=95 format=4 uid="uid://hjbhbk2a288b"]
 
 [ext_resource type="Script" path="res://scripts/SceneLoader.cs" id="1_vc6r2"]
 [ext_resource type="Script" path="res://scripts/doll.cs" id="2_id23e"]
@@ -81,6 +81,8 @@
 [ext_resource type="Texture2D" uid="uid://xdaifsui28ns" path="res://sprites/move/jump_with_hands/JUMP_HANDS13.png" id="78_lo0kj"]
 [ext_resource type="Texture2D" uid="uid://bsnrc3trehjr5" path="res://sprites/background/Sewage sprite 2.png" id="80_03jts"]
 [ext_resource type="Texture2D" uid="uid://casjgnty51673" path="res://sprites/background/Sewage sprite 1.png" id="81_xuvor"]
+[ext_resource type="PackedScene" uid="uid://ciy42q4c5h1bo" path="res://helpers/actionable.tscn" id="82_6xc0k"]
+[ext_resource type="Resource" uid="uid://bp2gp74qh6go3" path="res://dialogue/main.dialogue" id="83_poapa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lwyp1"]
 animations = [{
@@ -374,6 +376,12 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvtog"]
+size = Vector2(158, 81)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kuide"]
+radius = 67.0298
+
 [node name="First" type="Node2D"]
 script = ExtResource("1_vc6r2")
 
@@ -465,3 +473,22 @@ frame_progress = 0.645819
 [node name="Camera2D" type="Camera2D" parent="Doll"]
 position = Vector2(527, 140)
 zoom = Vector2(1.2, 1.2)
+
+[node name="Direction" type="Marker2D" parent="Doll"]
+
+[node name="ActionableFinder" type="Area2D" parent="Doll/Direction"]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doll/Direction/ActionableFinder"]
+position = Vector2(528, 220)
+shape = SubResource("RectangleShape2D_bvtog")
+
+[node name="Start" type="StaticBody2D" parent="."]
+
+[node name="Actionable" parent="Start" instance=ExtResource("82_6xc0k")]
+position = Vector2(662, 415)
+DialogueResource = ExtResource("83_poapa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start/Actionable"]
+position = Vector2(72, -6)
+shape = SubResource("CircleShape2D_kuide")
