@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5wan8kfi0jeb"
-path="res://.godot/imported/LADDER4.png-f29a8d638a936011d34d16185f8c8b31.ctex"
+uid="uid://dqh2mgsphhh6m"
+path="res://.godot/imported/Sewage sprite lower waterfall11.png-2c1a8ac256ea6308f4a1a0eabae80092.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/static/LADDER4.png"
-dest_files=["res://.godot/imported/LADDER4.png-f29a8d638a936011d34d16185f8c8b31.ctex"]
+source_file="res://sprites/background/waterfall_animation/Sewage sprite lower waterfall11.png"
+dest_files=["res://.godot/imported/Sewage sprite lower waterfall11.png-2c1a8ac256ea6308f4a1a0eabae80092.ctex"]
 
 [params]
 

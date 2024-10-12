@@ -1,7 +1,7 @@
-using System;
-using DialogueManagerRuntime;
+
 using Godot;
 using Godot.Collections;
+using helpers;
 
 
 public partial class doll : CharacterBody2D
@@ -31,6 +31,10 @@ public partial class doll : CharacterBody2D
 	//collision mask
 	private CollisionShape2D _collisionMask;
 
+	//dialogur manager
+	Area2D actionableFinder;
+	Godot.Vector2 inputvector = Godot.Vector2.Zero;
+
 
 	public override void _Ready(){
 		_standsprite = GetNode<AnimatedSprite2D>("NoEarsStatic");
@@ -45,20 +49,26 @@ public partial class doll : CharacterBody2D
 		_jumpWithHandsAnimation = GetNode<AnimatedSprite2D>("JumpWithHands");
 
 	 	_collisionMask = GetNode<CollisionShape2D>("CollisionShape2D");
+		actionableFinder = GetNode<Area2D>("Direction/ActionableFinder");
 
 	}
 
 	public override void _UnhandledInput(InputEvent @event){
-		Resource dialogueResource = GD.Load("res://dialogue/main.dialogue");
 		if (Input.IsActionJustPressed("ui_cancel")){
-			DialogueManager.ShowDialogueBalloon(dialogueResource, "start");
+			
+			Array<Area2D> actionables = actionableFinder.GetOverlappingAreas();
+			if(actionables.Count > 0){
+				(actionables[0] as helpers.Actionable).Action();
+				inputvector = Godot.Vector2.Zero;
+			}
+		inputvector = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		}
 	}
 
 
     public override void _PhysicsProcess(double delta)
 	{
-		Vector2 velocity = Velocity;
+		Godot.Vector2 velocity = Velocity;
 
 		// Add the gravity.
 		if (!IsOnFloor())
@@ -74,8 +84,8 @@ public partial class doll : CharacterBody2D
 
 		// Get the input direction and handle the movement/deceleration.
 		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		if (direction != Vector2.Zero)
+		Godot.Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		if (direction != Godot.Vector2.Zero)
 		{
 			velocity.X = direction.X * Speed;
 		}
@@ -126,7 +136,7 @@ public partial class doll : CharacterBody2D
     }
 
 	private void _UpdateColisionMask(float x, float y){
-		_collisionMask.Position = new Vector2(x,y);
+		_collisionMask.Position = new Godot.Vector2(x,y);
 	}
 
 	private void _changeAnimationState(bool walking, AnimatedSprite2D _stand, AnimatedSprite2D _walks, float velX){

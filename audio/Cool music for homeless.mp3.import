@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crll1kml0i61t"
+path="res://.godot/imported/Cool music for homeless.mp3-103290df2342c43ea298f1217aa59cce.mp3str"
+
+[deps]
+
+source_file="res://audio/Cool music for homeless.mp3"
+dest_files=["res://.godot/imported/Cool music for homeless.mp3-103290df2342c43ea298f1217aa59cce.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

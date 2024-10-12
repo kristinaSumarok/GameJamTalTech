@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3sixev352n7i"
-path="res://.godot/imported/LADDER6.png-2cb739cf48681374847e27eb918d9d7f.ctex"
+uid="uid://kiamexvyfuvg"
+path="res://.godot/imported/GET_HANDS11.png-5cc83fd3ff1278a0b8dc4642194e7ba4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/static/LADDER6.png"
-dest_files=["res://.godot/imported/LADDER6.png-2cb739cf48681374847e27eb918d9d7f.ctex"]
+source_file="res://sprites/static/get_hands/GET_HANDS11.png"
+dest_files=["res://.godot/imported/GET_HANDS11.png-5cc83fd3ff1278a0b8dc4642194e7ba4.ctex"]
 
 [params]
 
