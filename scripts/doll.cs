@@ -1,13 +1,15 @@
-using Godot;
 using System;
-using System.Drawing;
+using DialogueManagerRuntime;
+using Godot;
+using Godot.Collections;
+
 
 public partial class doll : CharacterBody2D
 {
 	public const float Speed = 300.0f;
 	public const float JumpVelocity = -400.0f;
-
 	public int collectedLimbs = 0;
+
 
     //Nodes
 	///TODO: replace with array of sprite animations if possible
@@ -29,6 +31,7 @@ public partial class doll : CharacterBody2D
 	//collision mask
 	private CollisionShape2D _collisionMask;
 
+
 	public override void _Ready(){
 		_standsprite = GetNode<AnimatedSprite2D>("NoEarsStatic");
 		_withEarsSprite = GetNode<AnimatedSprite2D>("withEarsStatic");
@@ -42,9 +45,18 @@ public partial class doll : CharacterBody2D
 		_jumpWithHandsAnimation = GetNode<AnimatedSprite2D>("JumpWithHands");
 
 	 	_collisionMask = GetNode<CollisionShape2D>("CollisionShape2D");
+
 	}
 
-	public override void _PhysicsProcess(double delta)
+	public override void _UnhandledInput(InputEvent @event){
+		Resource dialogueResource = GD.Load("res://dialogue/main.dialogue");
+		if (Input.IsActionJustPressed("ui_cancel")){
+			DialogueManager.ShowDialogueBalloon(dialogueResource, "start");
+		}
+	}
+
+
+    public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
 
