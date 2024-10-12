@@ -55,11 +55,9 @@ public partial class doll : CharacterBody2D
 		}
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor()&& collectedLimbs != 0 && collectedLimbs != 1)
 		{
 			velocity.Y = JumpVelocity;
-			_jumpWithHandsAnimation.Visible = true;
-			_jumpWithHandsAnimation.Play();
 		}
 
 		// Get the input direction and handle the movement/deceleration.
