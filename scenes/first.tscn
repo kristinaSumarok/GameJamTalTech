@@ -1,12 +1,107 @@
-[gd_scene load_steps=6 format=3 uid="uid://hjbhbk2a288b"]
+[gd_scene load_steps=27 format=3 uid="uid://hjbhbk2a288b"]
 
 [ext_resource type="Script" path="res://scripts/SceneLoader.cs" id="1_vc6r2"]
 [ext_resource type="TileSet" uid="uid://bxyjnqb0ieab7" path="res://sprites/g.tres" id="2_1y60q"]
 [ext_resource type="Script" path="res://scripts/doll.cs" id="2_id23e"]
 [ext_resource type="Texture2D" uid="uid://dpw20vye4fido" path="res://sprites/static/STASTIC_NO_EARS1.png" id="4_er6vy"]
+[ext_resource type="Texture2D" uid="uid://dct5qilhx08k2" path="res://sprites/static/STASTIC_NO_EARS2.png" id="5_5wve1"]
+[ext_resource type="Texture2D" uid="uid://ivugkkv268gd" path="res://sprites/static/STASTIC_NO_EARS3.png" id="6_is4x7"]
+[ext_resource type="Texture2D" uid="uid://ck0noss6mbug0" path="res://sprites/static/STASTIC_NO_EARS4.png" id="7_lof1k"]
+[ext_resource type="Texture2D" uid="uid://88vl5rjp0cqe" path="res://sprites/static/STASTIC_NO_EARS5.png" id="8_ltten"]
+[ext_resource type="Texture2D" uid="uid://brx1jnbfr6pub" path="res://sprites/static/STASTIC_NO_EARS6.png" id="9_vns76"]
+[ext_resource type="Texture2D" uid="uid://b77en2a1aiqhf" path="res://sprites/static/STASTIC_NO_EARS7.png" id="10_g1ncm"]
+[ext_resource type="Texture2D" uid="uid://wtr8xh2jiqrb" path="res://sprites/static/STASTIC_NO_EARS8.png" id="11_7nmqc"]
+[ext_resource type="Texture2D" uid="uid://bnx2ug6bri1rn" path="res://sprites/static/STASTIC_NO_EARS9.png" id="12_cyfub"]
+[ext_resource type="Texture2D" uid="uid://hvj0nympeyx4" path="res://sprites/static/STASTIC_NO_EARS10.png" id="13_jbx43"]
+[ext_resource type="Texture2D" uid="uid://bbe76bxmooskn" path="res://sprites/static/STASTIC_WITH_EARS1.png" id="14_mrx7r"]
+[ext_resource type="Texture2D" uid="uid://br4v0yqqsrm81" path="res://sprites/static/STASTIC_WITH_EARS2.png" id="15_3t41q"]
+[ext_resource type="Texture2D" uid="uid://dm6da88pjj840" path="res://sprites/static/STASTIC_WITH_EARS3.png" id="16_geoi2"]
+[ext_resource type="Texture2D" uid="uid://b0tns13xrm8xd" path="res://sprites/static/STASTIC_WITH_EARS4.png" id="17_p1e5r"]
+[ext_resource type="Texture2D" uid="uid://d308dvsq4xh27" path="res://sprites/static/STASTIC_WITH_EARS5.png" id="18_8h7wl"]
+[ext_resource type="Texture2D" uid="uid://v8tfq8jad42i" path="res://sprites/static/STASTIC_WITH_EARS6.png" id="19_0ceeo"]
+[ext_resource type="Texture2D" uid="uid://chr750pjd2xng" path="res://sprites/static/STASTIC_WITH_EARS7.png" id="20_bahii"]
+[ext_resource type="Texture2D" uid="uid://bpaqa127pee2c" path="res://sprites/static/STASTIC_WITH_EARS8.png" id="21_gypup"]
+[ext_resource type="Texture2D" uid="uid://djw0r2y6s5sgi" path="res://sprites/static/STASTIC_WITH_EARS9.png" id="22_76ul8"]
+[ext_resource type="Texture2D" uid="uid://ts7sipeoiexr" path="res://sprites/static/STASTIC_WITH_EARS10.png" id="23_ia342"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lwyp1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_er6vy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5wve1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_is4x7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lof1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ltten")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vns76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g1ncm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7nmqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_cyfub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jbx43")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ew34f"]
-size = Vector2(75, 52)
+size = Vector2(104.5, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gdoef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_mrx7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3t41q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_geoi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_p1e5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8h7wl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0ceeo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bahii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_gypup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_76ul8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ia342")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="First" type="ColorRect"]
 anchors_preset = 15
@@ -21,25 +116,31 @@ grow_vertical = 2
 color = Color(0.372949, 0.380717, 0.371678, 1)
 script = ExtResource("1_vc6r2")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
 position = Vector2(0, 1)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0)
 tile_set = ExtResource("2_1y60q")
-format = 2
-layer_0/tile_data = PackedInt32Array(131072, 0, 1, 131073, 0, 1)
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(0, 1)
-
-[node name="Doll" type="CharacterBody2D" parent="Node2D"]
+[node name="Doll" type="CharacterBody2D" parent="Layer0"]
 script = ExtResource("2_id23e")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Doll"]
+[node name="NoEarsStatic" type="AnimatedSprite2D" parent="Layer0/Doll"]
+visible = false
+position = Vector2(527, 229)
+sprite_frames = SubResource("SpriteFrames_lwyp1")
+frame = 3
+frame_progress = 0.270871
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Doll"]
-position = Vector2(527, 239)
-scale = Vector2(0.847368, 0.677359)
-texture = ExtResource("4_er6vy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Doll"]
-position = Vector2(527.5, 235)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layer0/Doll"]
+position = Vector2(532.25, 212.5)
 shape = SubResource("RectangleShape2D_ew34f")
+
+[node name="Camera2D" type="Camera2D" parent="Layer0/Doll"]
+position = Vector2(530, 218)
+zoom = Vector2(1.5, 1.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Layer0/Doll"]
+position = Vector2(528, 230)
+sprite_frames = SubResource("SpriteFrames_gdoef")
+frame_progress = 0.0275062

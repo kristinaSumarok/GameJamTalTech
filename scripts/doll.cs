@@ -6,6 +6,17 @@ public partial class doll : CharacterBody2D
 	public const float Speed = 300.0f;
 	public const float JumpVelocity = -400.0f;
 
+	public int collectedLimbs = 0;
+
+
+	private AnimatedSprite2D _standsprite;
+	private AnimatedSprite2D _withEarsSprite;
+
+	public override void _Ready(){
+		_standsprite = GetNode<AnimatedSprite2D>("NoEarsStatic");
+		_withEarsSprite = GetNode<AnimatedSprite2D>("withEarsStatic");
+	}
+
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
@@ -35,6 +46,29 @@ public partial class doll : CharacterBody2D
 		}
 
 		Velocity = velocity;
+
+		_UpdateSpriteRenderer(velocity.X);
 		MoveAndSlide();
 	}
+
+	private void _UpdateSpriteRenderer(float velX)
+    {
+        bool walking = velX != 0;
+
+		//TODO: replace with case statement
+		if (collectedLimbs == 0){
+
+			if (!walking){
+				_standsprite.Play();
+			}
+			else{
+				_standsprite.Stop();
+			}
+		}
+		else {
+			_standsprite.Stop();
+			_withEarsSprite.Play();
+		}
+	
+    }
 }
