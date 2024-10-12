@@ -10,18 +10,32 @@ public partial class doll : CharacterBody2D
 	public int collectedLimbs = 0;
 
     //Nodes
+	///TODO: replace with array of sprite animations if possible
+	//static animations
 	private AnimatedSprite2D _standsprite;
-	private AnimatedSprite2D _headMoveAnimation;
 	private AnimatedSprite2D _withEarsSprite;
+	private AnimatedSprite2D _withLegsSprite;
+	private AnimatedSprite2D _withLegsArmsSprite;
+
+	//moving animations
+	private AnimatedSprite2D _walksWithHandsAnimation;
 	private AnimatedSprite2D _walksNoHandsAnimation;
+	private AnimatedSprite2D _headMoveAnimation;
+
+	//collision mask
 	private CollisionShape2D _collisionMask;
 
 	public override void _Ready(){
 		_standsprite = GetNode<AnimatedSprite2D>("NoEarsStatic");
-		_headMoveAnimation = GetNode<AnimatedSprite2D>("HeadMove");
 		_withEarsSprite = GetNode<AnimatedSprite2D>("withEarsStatic");
+		_withLegsSprite = GetNode<AnimatedSprite2D>("withLegsStatic");
+		_withLegsArmsSprite = GetNode<AnimatedSprite2D>("withLegsArmsStatic");
+
+		_headMoveAnimation = GetNode<AnimatedSprite2D>("HeadMove");
 		_walksNoHandsAnimation = GetNode<AnimatedSprite2D>("WalksNoHands");
-		_collisionMask = GetNode<CollisionShape2D>("CollisionShape2D");
+		_walksWithHandsAnimation = GetNode<AnimatedSprite2D>("WalksWithHands");
+
+	 	_collisionMask = GetNode<CollisionShape2D>("CollisionShape2D");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -64,34 +78,57 @@ public partial class doll : CharacterBody2D
 
 		//TODO: replace with switch / case statement
 		if (collectedLimbs == 0){
-			_UpdateColisionMask(528.5, 221.5);
-			if (!walking){
-				_standsprite.Visible = true;
-				_standsprite.Play();
-
-				_headMoveAnimation.Visible = false;
-				_headMoveAnimation.Stop();
-			}
-			else {
-				_standsprite.Visible = false;
-				_standsprite.Stop();
-
-				_headMoveAnimation.Visible = true;
-				_headMoveAnimation.Play();
-
-				_headMoveAnimation.FlipH = velX < 0;
-			}
+			_UpdateColisionMask(528.5f, 221.5f);
+			_changeAnimationState(walking, _standsprite, _headMoveAnimation, velX);
 		}
 		else if (collectedLimbs == 1) {
+			_standsprite.Visible = false;
 			_standsprite.Stop();
-			_withEarsSprite.Play();
+
+			_changeAnimationState(walking, _withEarsSprite, _headMoveAnimation, velX);
+
 		}
 		else if (collectedLimbs == 2) {
-			_UpdateColisionMask(528.5, 232);
+			_withEarsSprite.Visible = false;
+			_withEarsSprite.Stop();
+			_headMoveAnimation.Visible = false;
+			_headMoveAnimation.Stop();
+
+			_UpdateColisionMask(528.5f, 232f);
+			_changeAnimationState(walking, _withLegsSprite, _walksNoHandsAnimation, velX);
+		}
+		else if (collectedLimbs == 3) {
+			_withLegsSprite.Visible = false;
+			_withLegsSprite.Stop();
+			_walksNoHandsAnimation.Visible = false;
+			_walksNoHandsAnimation.Stop();
+
+			_changeAnimationState(walking, _withLegsArmsSprite, _walksWithHandsAnimation, velX);
 		}
     }
 
-	private void _UpdateColisionMask(double x, double y){
-		_collisionMask.Position = new Vector2((float)x,(float)y);
+	private void _UpdateColisionMask(float x, float y){
+		_collisionMask.Position = new Vector2(x,y);
 	}
+
+	private void _changeAnimationState(bool walking, AnimatedSprite2D _stand, AnimatedSprite2D _walks, float velX){
+
+		if (!walking){
+				_stand.Visible = true;
+				_stand.Play();
+
+				_walks.Visible = false;
+				_walks.Stop();
+			}
+			else {
+				_stand.Visible = false;
+				_stand.Stop();
+
+				_walks.Visible = true;
+				_walks.Play();
+
+				_walks.FlipH = velX < 0;
+			}
+	}
+
 }

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drlukegrof2ap"
-path="res://.godot/imported/Sewage sprite dorozhka.png-36479aae73618c39e3c0a61a7cd51e2e.ctex"
+uid="uid://caxxflonv3ueg"
+path="res://.godot/imported/WALK_WITH_HANDS7.png-3eadd94ea68f827b2c84b841af44e650.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Sewage sprite dorozhka.png"
-dest_files=["res://.godot/imported/Sewage sprite dorozhka.png-36479aae73618c39e3c0a61a7cd51e2e.ctex"]
+source_file="res://sprites/move/walk_with_hands/WALK_WITH_HANDS7.png"
+dest_files=["res://.godot/imported/WALK_WITH_HANDS7.png-3eadd94ea68f827b2c84b841af44e650.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5gut7a1uhibg"
-path="res://.godot/imported/STASTIC_WITH_LEGSsheet.png-53e586b105b5f53517fce4cb342d99c3.ctex"
+uid="uid://d1gvtdtg0d87q"
+path="res://.godot/imported/WALK_WITH_HANDS8.png-76c56ab8ec7c94cca7c8bd68c48bf107.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/STASTIC_WITH_LEGSsheet.png"
-dest_files=["res://.godot/imported/STASTIC_WITH_LEGSsheet.png-53e586b105b5f53517fce4cb342d99c3.ctex"]
+source_file="res://sprites/move/walk_with_hands/WALK_WITH_HANDS8.png"
+dest_files=["res://.godot/imported/WALK_WITH_HANDS8.png-76c56ab8ec7c94cca7c8bd68c48bf107.ctex"]
 
 [params]
 

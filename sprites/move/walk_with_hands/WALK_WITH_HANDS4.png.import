@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b15blfctbpqbb"
-path="res://.godot/imported/WALK_WITH_HANDS2.png-673c22cdfc3a2b29e2eeb13a00650593.ctex"
+uid="uid://vk15b5jwrgoh"
+path="res://.godot/imported/WALK_WITH_HANDS4.png-90fa9c5ac1b11999c69aab6a84126011.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/WALK_WITH_HANDS2.png"
-dest_files=["res://.godot/imported/WALK_WITH_HANDS2.png-673c22cdfc3a2b29e2eeb13a00650593.ctex"]
+source_file="res://sprites/move/walk_with_hands/WALK_WITH_HANDS4.png"
+dest_files=["res://.godot/imported/WALK_WITH_HANDS4.png-90fa9c5ac1b11999c69aab6a84126011.ctex"]
 
 [params]
 
