@@ -22,6 +22,10 @@ public partial class doll : CharacterBody2D
 	private AnimatedSprite2D _walksNoHandsAnimation;
 	private AnimatedSprite2D _headMoveAnimation;
 
+	//jumping animations
+
+	private AnimatedSprite2D _jumpWithHandsAnimation;
+
 	//collision mask
 	private CollisionShape2D _collisionMask;
 
@@ -34,6 +38,8 @@ public partial class doll : CharacterBody2D
 		_headMoveAnimation = GetNode<AnimatedSprite2D>("HeadMove");
 		_walksNoHandsAnimation = GetNode<AnimatedSprite2D>("WalksNoHands");
 		_walksWithHandsAnimation = GetNode<AnimatedSprite2D>("WalksWithHands");
+
+		_jumpWithHandsAnimation = GetNode<AnimatedSprite2D>("JumpWithHands");
 
 	 	_collisionMask = GetNode<CollisionShape2D>("CollisionShape2D");
 	}
@@ -52,6 +58,8 @@ public partial class doll : CharacterBody2D
 		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
 		{
 			velocity.Y = JumpVelocity;
+			_jumpWithHandsAnimation.Visible = true;
+			_jumpWithHandsAnimation.Play();
 		}
 
 		// Get the input direction and handle the movement/deceleration.
