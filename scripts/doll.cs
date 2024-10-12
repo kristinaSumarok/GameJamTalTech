@@ -61,8 +61,8 @@ public partial class doll : CharacterBody2D
 			if (!walking){
 				_standsprite.Play();
 			}
-			else{
-				_standsprite.Stop();
+			else {
+				
 			}
 		}
 		else {
