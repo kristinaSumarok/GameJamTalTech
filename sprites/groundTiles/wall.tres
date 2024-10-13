@@ -485,5 +485,6 @@ texture_region_size = Vector2i(219, 550)
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-109.333, -274.667, 109.333, -274.667, 109.333, 274.667, -18.7383, 274.667, -109.333, 168.999)
 
 [resource]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_j2r33")

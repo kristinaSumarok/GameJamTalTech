@@ -1,4 +1,5 @@
 
+using System;
 using Godot;
 using Godot.Collections;
 using helpers;
@@ -33,7 +34,8 @@ public partial class doll : CharacterBody2D
 
 	//dialogue manager
 	Area2D actionableFinder;
-	bool dialogueOn = false;
+	Area2D press_e;
+	
 
 
 
@@ -51,24 +53,31 @@ public partial class doll : CharacterBody2D
 
 	 	_collisionMask = GetNode<CollisionShape2D>("CollisionShape2D");
 		actionableFinder = GetNode<Area2D>("Direction/ActionableFinder");
+		press_e = GetNode<Area2D>("press_e");
 
 	}
 
 	public override void _UnhandledInput(InputEvent @event){
 
-		if (Input.IsActionJustPressed("ui_action")){
+		if (Input.IsActionJustPressed("ui_text_submit")){
 			
 			Array<Area2D> actionables = actionableFinder.GetOverlappingAreas();
-			if(actionables.Count > 0){
+			
+			if(actionables.Count >0)
+			{
 				(actionables[0] as helpers.Actionable).Action();
-	
+				
 			}
+			
 		}
 	}
 
 
     public override void _PhysicsProcess(double delta)
 	{
+
+
+        // Ensure tunel is not null before calling its methods
 		Godot.Vector2 velocity = Velocity;
 
 		// Add the gravity.

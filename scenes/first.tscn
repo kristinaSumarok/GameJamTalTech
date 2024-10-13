@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=4 uid="uid://hjbhbk2a288b"]
+[gd_scene load_steps=114 format=4 uid="uid://hjbhbk2a288b"]
 
 [ext_resource type="Script" path="res://scripts/SceneLoader.cs" id="1_qjt0m"]
 [ext_resource type="AudioStream" uid="uid://b6mluqu2g66hx" path="res://audio/real-white-noise-white-noise-lite-rain.mp3" id="2_0abxc"]
@@ -93,11 +93,9 @@
 [ext_resource type="Texture2D" uid="uid://pp4mn1fi7mwx" path="res://sprites/move/jump_with_hands/JUMP_HANDS10.png" id="92_kmm03"]
 [ext_resource type="Texture2D" uid="uid://c65bc0s37s3mi" path="res://sprites/move/jump_with_hands/JUMP_HANDS11.png" id="93_ko36f"]
 [ext_resource type="Texture2D" uid="uid://bkfbgu4h0k8ca" path="res://sprites/move/jump_with_hands/JUMP_HANDS12.png" id="94_2w4u2"]
+[ext_resource type="Script" path="res://scripts/tunel.cs" id="94_ueii3"]
 [ext_resource type="Texture2D" uid="uid://xdaifsui28ns" path="res://sprites/move/jump_with_hands/JUMP_HANDS13.png" id="95_0weq4"]
 [ext_resource type="TileSet" uid="uid://dmbkf406bx5kh" path="res://sprites/groundTiles/water.tres" id="95_6uha2"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_kuide"]
-radius = 48.0416
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lwyp1"]
 animations = [{
@@ -392,7 +390,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvtog"]
-size = Vector2(158, 81)
+size = Vector2(101, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3suxf"]
+size = Vector2(100, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjj5g"]
+size = Vector2(156, 190)
 
 [sub_resource type="Theme" id="Theme_be0ti"]
 
@@ -419,8 +423,8 @@ line_spacing = 0.0
 font_size = 30
 shadow_size = 20
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjj5g"]
-size = Vector2(156, 190)
+[sub_resource type="CircleShape2D" id="CircleShape2D_kuide"]
+radius = 48.0416
 
 [node name="First" type="Node2D"]
 script = ExtResource("1_qjt0m")
@@ -444,16 +448,6 @@ position = Vector2(0, 1)
 tile_map_data = PackedByteArray("AAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAAMAAAAAAAAAAAARAAMAAAAAAAAAAAASAAMAAAAAAAAAAAATAAMAAAAAAAAAAAAUAAMAAAAAAAAAAAAVAAMAAAAAAAAAAAAWAAMAAAAAAAAAAAAXAAMAAAAAAAAAAAA3ABEAAAAAAAEAAAARABEAAAAAAAEAAADr/xMAAAAAAAEAAADE/xMAAAAAAAEAAACd/xMAAAAAAAEAAAC0/z4AAAAAAAEAAADa/z4AAAAAAAEAAAAJABEAAAAAAAEAAAA=")
 tile_set = ExtResource("4_t2scm")
 
-[node name="Start" type="StaticBody2D" parent="."]
-
-[node name="Actionable" parent="Start" instance=ExtResource("5_y2bhp")]
-position = Vector2(662, 415)
-DialogueResource = ExtResource("6_omi6w")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Start/Actionable"]
-position = Vector2(334, -4)
-shape = SubResource("CircleShape2D_kuide")
-
 [node name="sewage-pit-ladder" type="TextureRect" parent="."]
 offset_left = 4068.0
 offset_top = 1330.0
@@ -462,13 +456,15 @@ offset_bottom = 1978.0
 texture = ExtResource("7_gom7q")
 
 [node name="scene-1" type="TextureRect" parent="."]
-offset_left = -66.0
+offset_left = -67.0
 offset_top = -25.0
-offset_right = 1086.0
+offset_right = 1085.0
 offset_bottom = 623.0
 texture = ExtResource("8_ybgvt")
 
 [node name="wall" type="TileMapLayer" parent="."]
+light_mask = 0
+visibility_layer = 2
 tile_map_data = PackedByteArray("AACEAA8AAAADAAAAAAAq/xQAAAADAAAAABBV/2UAAAADAAAAABA=")
 tile_set = ExtResource("9_m4ny2")
 
@@ -497,9 +493,9 @@ position = Vector2(4635, 1025)
 texture = ExtResource("16_y3fph")
 
 [node name="scene-1-right" type="TextureRect" parent="."]
-offset_left = 1086.0
+offset_left = 1085.0
 offset_top = -25.0
-offset_right = 2238.0
+offset_right = 2237.0
 offset_bottom = 623.0
 texture = ExtResource("17_lv0vb")
 
@@ -533,6 +529,8 @@ texture = ExtResource("3_q71qv")
 
 [node name="Doll" type="CharacterBody2D" parent="."]
 position = Vector2(0, 1)
+collision_layer = 32
+collision_mask = 18
 script = ExtResource("20_dd5g4")
 
 [node name="NoEarsStatic" type="AnimatedSprite2D" parent="Doll"]
@@ -593,25 +591,47 @@ frame_progress = 0.645819
 
 [node name="Camera2D" type="Camera2D" parent="Doll"]
 position = Vector2(527, 140)
-zoom = Vector2(1.2, 1.2)
 
 [node name="Direction" type="Marker2D" parent="Doll"]
 
 [node name="ActionableFinder" type="Area2D" parent="Doll/Direction"]
+position = Vector2(-1, 0)
+collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doll/Direction/ActionableFinder"]
-position = Vector2(528, 220)
+position = Vector2(528.5, 220)
 shape = SubResource("RectangleShape2D_bvtog")
+
+[node name="press_e" type="Area2D" parent="Doll"]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doll/press_e"]
+position = Vector2(528, 220)
+shape = SubResource("RectangleShape2D_3suxf")
 
 [node name="water" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAfACgAAAAAAAYAAAAfACwAAAAAAAYAAADY/ywAAAAAAAYAAABmACgAAAAAAAYAAABnACwAAAAAAAYAAACQ/ywAAAAAAAYAAAA=")
 tile_set = ExtResource("95_6uha2")
 
-[node name="use_E" type="Label" parent="."]
-offset_left = -1959.0
+[node name="TopHole" type="StaticBody2D" parent="."]
+
+[node name="FindTunel" type="Area2D" parent="TopHole"]
+position = Vector2(-1, 0)
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("94_ueii3")
+
+[node name="Tunel" type="CollisionShape2D" parent="TopHole/FindTunel"]
+position = Vector2(-1797, 509)
+shape = SubResource("RectangleShape2D_tjj5g")
+
+[node name="use_E" type="Label" parent="TopHole/FindTunel"]
+visible = false
+offset_left = -1958.0
 offset_top = 364.0
-offset_right = -1922.0
+offset_right = -1921.0
 offset_bottom = 407.0
 theme = SubResource("Theme_be0ti")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -624,10 +644,12 @@ label_settings = SubResource("LabelSettings_xqrf4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TopHole" type="StaticBody2D" parent="."]
+[node name="Start" type="StaticBody2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="TopHole"]
+[node name="Actionable" parent="Start" instance=ExtResource("5_y2bhp")]
+position = Vector2(-199, 399)
+DialogueResource = ExtResource("6_omi6w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopHole/Area2D"]
-position = Vector2(-1797, 509)
-shape = SubResource("RectangleShape2D_tjj5g")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start/Actionable"]
+position = Vector2(-229, 82)
+shape = SubResource("CircleShape2D_kuide")
