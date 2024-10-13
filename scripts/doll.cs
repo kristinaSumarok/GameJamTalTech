@@ -36,7 +36,7 @@ public partial class doll : CharacterBody2D
 	//dialogue manager
 	Area2D actionableFinder;
 	public bool talks = false;
-	public int _collectedlimbs = 0;
+	public int _collectedlimbs = 1;
 	Vector2 inputVector = Vector2.Zero;
 
 
@@ -45,8 +45,8 @@ public partial class doll : CharacterBody2D
 		//talks = _sceneLoader.talks;
 	
 		_standsprite = GetNode<AnimatedSprite2D>("NoEarsStatic");
-		_withEarsSprite = GetNode<AnimatedSprite2D>("withEarsStatic");
-		_withLegsSprite = GetNode<AnimatedSprite2D>("withLegsStatic");
+		_withEarsSprite = GetNode<AnimatedSprite2D>("WithEarsStatic");
+		_withLegsSprite = GetNode<AnimatedSprite2D>("WithLegsStatic");
 		_withLegsArmsSprite = GetNode<AnimatedSprite2D>("withLegsArmsStatic");
 
 		_headMoveAnimation = GetNode<AnimatedSprite2D>("HeadMove");
@@ -70,6 +70,7 @@ public partial class doll : CharacterBody2D
 			if(actionables.Count >0 && _collectedlimbs == 0)
 			{
 				(actionables[0] as helpers.Actionable).Action();
+				_collectedlimbs = 1;
 				}	
 		}
 	}
@@ -177,8 +178,6 @@ public partial class doll : CharacterBody2D
 			}
 	}
 
-	public void ChangePosition(Vector2 position){
-		Position = position;
-	}
+
 
 }
