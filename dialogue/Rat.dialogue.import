@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bunl4uoyxdrsy"
+path="res://.godot/imported/Rat.dialogue-91e7945a292898ef31e5ec293b63f190.tres"
+
+[deps]
+
+source_file="res://dialogue/Rat.dialogue"
+dest_files=["res://.godot/imported/Rat.dialogue-91e7945a292898ef31e5ec293b63f190.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,18 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dle6ogi7abujd"]
+
+[ext_resource type="Texture2D" uid="uid://clh2lvn267mps" path="res://sprites/static/ears.png" id="1_iahh8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u34bi"]
+texture = ExtResource("1_iahh8")
+separation = Vector2i(5, 0)
+texture_region_size = Vector2i(32, 30)
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+1:1/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_u34bi")

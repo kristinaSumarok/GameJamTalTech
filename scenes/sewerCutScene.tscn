@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://vx5rmtqnux6"]
+
+[ext_resource type="VideoStream" path="res://video/sewercutscene.ogv" id="1_f7yfm"]
+[ext_resource type="Script" path="res://scripts/Sewer.cs" id="1_oi7jf"]
+
+[node name="Sewer" type="Node2D"]
+script = ExtResource("1_oi7jf")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -69.0
+offset_top = -34.0
+offset_right = 1211.0
+offset_bottom = 686.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_f7yfm")
+autoplay = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.2
