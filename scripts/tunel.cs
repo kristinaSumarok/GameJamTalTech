@@ -30,7 +30,7 @@ public partial class tunel : Area2D
 
     public override void _UnhandledInput(InputEvent @event){
         if(Input.IsActionJustPressed("ui_accept")&&label_e_.Visible){
-            player.Position=new Vector2(-1450,1383);
+            GetNode<SceneLoader>("/root/SceneLoader").changeToScene("sewerCutScene.tscn");
          }
     }
 }

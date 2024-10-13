@@ -177,4 +177,8 @@ public partial class doll : CharacterBody2D
 			}
 	}
 
+	public void ChangePosition(Vector2 position){
+		Position = position;
+	}
+
 }

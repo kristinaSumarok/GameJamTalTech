@@ -17,10 +17,10 @@ public partial class ratKing : Area2D
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	 private void OnBodyEntered(Node body)
-	{
+		{
 			label_e_.Visible = true;
-		  
-	}
+		}
+
 	private void OnBodyExited(Node body){
 		 label_e_.Visible = false;
 	}
@@ -28,6 +28,14 @@ public partial class ratKing : Area2D
 	public override void _UnhandledInput(InputEvent @event){
 		if(Input.IsActionJustPressed("ui_accept")){
 			DialogueManager.ShowDialogueBalloon(GD.Load("res://dialogue/Rat.dialogue"), "start");
+			if (GetOverlappingBodies().Count > 0)
+            {
+                var body = GetOverlappingBodies()[0];
+                if (body is doll player)
+                {
+                    player._collectedlimbs += 1; // Update limbs after dialogue
+                }
+            }
 		 }
 	}
 }
