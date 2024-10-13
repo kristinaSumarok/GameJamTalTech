@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=4 uid="uid://hjbhbk2a288b"]
+[gd_scene load_steps=129 format=4 uid="uid://hjbhbk2a288b"]
 
 [ext_resource type="Script" path="res://scripts/SceneLoader.cs" id="1_qjt0m"]
 [ext_resource type="AudioStream" uid="uid://b6mluqu2g66hx" path="res://audio/real-white-noise-white-noise-lite-rain.mp3" id="2_0abxc"]
@@ -96,6 +96,19 @@
 [ext_resource type="Script" path="res://scripts/tunel.cs" id="94_ueii3"]
 [ext_resource type="Texture2D" uid="uid://xdaifsui28ns" path="res://sprites/move/jump_with_hands/JUMP_HANDS13.png" id="95_0weq4"]
 [ext_resource type="TileSet" uid="uid://dmbkf406bx5kh" path="res://sprites/groundTiles/water.tres" id="95_6uha2"]
+[ext_resource type="Texture2D" uid="uid://bg8g1ltstudhv" path="res://sprites/static/ratking/ratking1.png" id="97_g8r5i"]
+[ext_resource type="Texture2D" uid="uid://dwny0wt4w3vkw" path="res://sprites/static/ratking/ratking2.png" id="98_8q7gj"]
+[ext_resource type="Texture2D" uid="uid://dd3fyophv5tpc" path="res://sprites/static/ratking/ratking3.png" id="99_obte5"]
+[ext_resource type="Texture2D" uid="uid://wo3u0r8qm0dc" path="res://sprites/static/ratking/ratking4.png" id="100_yq301"]
+[ext_resource type="Texture2D" uid="uid://0hu46t5rxqf4" path="res://sprites/static/ratking/ratking5.png" id="101_4eb4j"]
+[ext_resource type="Texture2D" uid="uid://cf8upb7bu5wkn" path="res://sprites/static/ratking/ratking6.png" id="102_74w83"]
+[ext_resource type="Texture2D" uid="uid://bk23lqf27l44x" path="res://sprites/static/ratking/ratking7.png" id="103_tw413"]
+[ext_resource type="Texture2D" uid="uid://chm2pryq0xi0d" path="res://sprites/static/ratking/ratking8.png" id="104_1o7co"]
+[ext_resource type="Texture2D" uid="uid://cjbs6v6e6xjgs" path="res://sprites/static/ratking/ratking9.png" id="105_ivts5"]
+[ext_resource type="Texture2D" uid="uid://dbqhvfvudvcmq" path="res://sprites/static/ratking/ratking10.png" id="106_gooca"]
+[ext_resource type="Texture2D" uid="uid://dutyr7o3y2aat" path="res://sprites/static/ratking/ratking11.png" id="107_t3ou0"]
+[ext_resource type="Texture2D" uid="uid://maqt5g87ifj5" path="res://sprites/static/ratking/ratking12.png" id="108_p4gvs"]
+[ext_resource type="Texture2D" uid="uid://baic32ek51r4c" path="res://sprites/static/ratking/ratking13.png" id="109_qckrt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lwyp1"]
 animations = [{
@@ -426,6 +439,56 @@ shadow_size = 20
 [sub_resource type="CircleShape2D" id="CircleShape2D_kuide"]
 radius = 48.0416
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_5af4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("97_g8r5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_8q7gj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_obte5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_yq301")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_4eb4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_74w83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_tw413")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_1o7co")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_ivts5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_gooca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_t3ou0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_p4gvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_qckrt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axuwi"]
+size = Vector2(216.5, 238)
+
 [node name="First" type="Node2D"]
 script = ExtResource("1_qjt0m")
 
@@ -653,3 +716,32 @@ DialogueResource = ExtResource("6_omi6w")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Start/Actionable"]
 position = Vector2(-683, 87)
 shape = SubResource("CircleShape2D_kuide")
+
+[node name="RatKing" type="CharacterBody2D" parent="."]
+position = Vector2(2962, -146)
+
+[node name="RatKingStatic" type="AnimatedSprite2D" parent="RatKing"]
+position = Vector2(-1025, 515)
+sprite_frames = SubResource("SpriteFrames_5af4t")
+frame_progress = 0.0324999
+
+[node name="SpeakWithRat" type="CollisionShape2D" parent="RatKing"]
+position = Vector2(-1024, 511)
+shape = SubResource("RectangleShape2D_axuwi")
+one_way_collision = true
+
+[node name="use_E" type="Label" parent="RatKing"]
+offset_left = -1037.0
+offset_top = 337.0
+offset_right = -1000.0
+offset_bottom = 380.0
+theme = SubResource("Theme_be0ti")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_onnbi")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ousco")
+text = "E"
+label_settings = SubResource("LabelSettings_xqrf4")
+horizontal_alignment = 1
+vertical_alignment = 1
