@@ -1,5 +1,8 @@
 ~ start
-
-Nathan: Hi, Tinky!
-
+set SceneLoader.talks = true
+set SceneLoader.collectedLimbs == 1
+Doll: Oh, my ears!
+Doll: Now I can hear sounds of our world...
+Doll: But where are my other parts? 
+set SceneLoader.talks = false 
 => END

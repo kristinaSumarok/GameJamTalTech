@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kg3xo0ugln71"
+path="res://.godot/imported/the sound of hitting a pipe when falling.mp3-6d799ce70a0887113debdf9e1c5c5ea2.mp3str"
+
+[deps]
+
+source_file="res://audio/the sound of hitting a pipe when falling.mp3"
+dest_files=["res://.godot/imported/the sound of hitting a pipe when falling.mp3-6d799ce70a0887113debdf9e1c5c5ea2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

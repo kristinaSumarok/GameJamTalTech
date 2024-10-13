@@ -1,4 +1,5 @@
 
+using System;
 using Godot;
 using Godot.Collections;
 using helpers;
@@ -6,9 +7,11 @@ using helpers;
 
 public partial class doll : CharacterBody2D
 {
-	public const float Speed = 300.0f;
+	public const float Speed = 500.0f;
 	public const float JumpVelocity = -400.0f;
-	public int collectedLimbs = 0;
+	SceneLoader _sceneLoader;
+	public bool talks = false;
+	
 
 
     //Nodes
@@ -31,12 +34,14 @@ public partial class doll : CharacterBody2D
 	//collision mask
 	private CollisionShape2D _collisionMask;
 
-	//dialogur manager
+	//dialogue manager
 	Area2D actionableFinder;
-	Godot.Vector2 inputvector = Godot.Vector2.Zero;
 
 
 	public override void _Ready(){
+		//_sceneLoader = new SceneLoader();
+		//talks = _sceneLoader.talks;
+	
 		_standsprite = GetNode<AnimatedSprite2D>("NoEarsStatic");
 		_withEarsSprite = GetNode<AnimatedSprite2D>("withEarsStatic");
 		_withLegsSprite = GetNode<AnimatedSprite2D>("withLegsStatic");
@@ -50,24 +55,41 @@ public partial class doll : CharacterBody2D
 
 	 	_collisionMask = GetNode<CollisionShape2D>("CollisionShape2D");
 		actionableFinder = GetNode<Area2D>("Direction/ActionableFinder");
+		_sceneLoader = GetNode<SceneLoader>("/root/SceneLoader");
 
 	}
 
 	public override void _UnhandledInput(InputEvent @event){
-		if (Input.IsActionJustPressed("ui_cancel")){
+
+
+		/*if (Input.IsActionJustPressed("ui_text_submit")){
 			
 			Array<Area2D> actionables = actionableFinder.GetOverlappingAreas();
-			if(actionables.Count > 0){
+			
+			if(actionables.Count >0 && _sceneLoader.collectedLimbs == 0)
+			{
 				(actionables[0] as helpers.Actionable).Action();
-				inputvector = Godot.Vector2.Zero;
+	
+				
 			}
-		inputvector = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		}
+			
+		}*/
 	}
 
 
     public override void _PhysicsProcess(double delta)
 	{
+		Array<Area2D> actionables = actionableFinder.GetOverlappingAreas();
+		if(actionables.Count >0 && _sceneLoader.collectedLimbs == 0)
+			{
+				_sceneLoader.talks = true;
+				_sceneLoader.collectedLimbs = 1;
+				(actionables[0] as helpers.Actionable).Action();
+			}
+
+		
+        // Ensure tunel is not null before calling its methods
+		if(!_sceneLoader.talks){
 		Godot.Vector2 velocity = Velocity;
 
 		// Add the gravity.
@@ -77,7 +99,7 @@ public partial class doll : CharacterBody2D
 		}
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor()&& collectedLimbs != 0 && collectedLimbs != 1)
+		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor()&& _sceneLoader.collectedLimbs != 0 && _sceneLoader.collectedLimbs != 1)
 		{
 			velocity.Y = JumpVelocity;
 		}
@@ -95,28 +117,35 @@ public partial class doll : CharacterBody2D
 		}
 
 		Velocity = velocity;
-
+		
 		_UpdateSpriteRenderer(velocity.X);
-		MoveAndSlide();
-	}
+		 MoveAndSlide();
+		 }
+		 else{
+		Velocity = Godot.Vector2.Zero;
+			 _UpdateSpriteRenderer(0);
+		 }
+		}
+		
+			
 
 	private void _UpdateSpriteRenderer(float velX)
     {
         bool walking = velX != 0;
 
 		//TODO: replace with switch / case statement
-		if (collectedLimbs == 0){
+		if (_sceneLoader.collectedLimbs == 0){
 			_UpdateColisionMask(528.5f, 221.5f);
 			_changeAnimationState(walking, _standsprite, _headMoveAnimation, velX);
 		}
-		else if (collectedLimbs == 1) {
+		else if (_sceneLoader.collectedLimbs == 1) {
 			_standsprite.Visible = false;
 			_standsprite.Stop();
 
 			_changeAnimationState(walking, _withEarsSprite, _headMoveAnimation, velX);
 
 		}
-		else if (collectedLimbs == 2) {
+		else if (_sceneLoader.collectedLimbs == 2) {
 			_withEarsSprite.Visible = false;
 			_withEarsSprite.Stop();
 			_headMoveAnimation.Visible = false;
@@ -125,7 +154,7 @@ public partial class doll : CharacterBody2D
 			_UpdateColisionMask(528.5f, 232f);
 			_changeAnimationState(walking, _withLegsSprite, _walksNoHandsAnimation, velX);
 		}
-		else if (collectedLimbs == 3) {
+		else if (_sceneLoader.collectedLimbs == 3) {
 			_withLegsSprite.Visible = false;
 			_withLegsSprite.Stop();
 			_walksNoHandsAnimation.Visible = false;
